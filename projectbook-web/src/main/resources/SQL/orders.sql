@@ -1,0 +1,15 @@
+## DROP DATABASE book;
+
+CREATE DATABASE IF NOT EXISTS book;
+use book;
+
+CREATE TABLE IF NOT EXISTS ORDERS (
+	no INTEGER AUTO_INCREMENT PRIMARY KEY,
+	member_no INTEGER NOT NULL,
+	date TIMESTAMP NULL,
+	FOREIGN KEY (member_no) REFERENCES MEMBER (no)
+);
+INSERT INTO ORDERS(member_no)
+VALUES('1');
+commit;
+select * from orders;

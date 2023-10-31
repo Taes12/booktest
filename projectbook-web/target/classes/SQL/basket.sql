@@ -1,0 +1,16 @@
+## DROP DATABASE book;
+
+CREATE DATABASE IF NOT EXISTS book;
+use book;
+
+CREATE TABLE IF NOT EXISTS BASKET (
+	member_no INTEGER NOT NULL,
+	book_no INTEGER NOT NULL,
+	quantity INTEGER NULL,
+	FOREIGN KEY (member_no) REFERENCES MEMBER (no),
+	FOREIGN KEY (book_no) REFERENCES BOOK (no)
+);
+INSERT INTO BASKET(member_no,book_no,quantity)
+VALUES('1','1','3');
+COMMIT;
+SELECT * FROM BASKET;
